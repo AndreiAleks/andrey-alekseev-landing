@@ -1,0 +1,76 @@
+# ============================================================
+# Блог alekseevtrener.ru/blog — Hugo.
+# Собирается в /blog основного сайта через .github/workflows/deploy.yml
+# ============================================================
+
+baseURL = "https://alekseevtrener.ru/blog/"
+locale = "ru-RU"
+defaultContentLanguage = "ru"
+title = "Андрей Алексеев"
+hasCJKLanguage = false
+enableEmoji = true
+timeZone = "Europe/Moscow"
+
+# dynamo — тема под дизайн лендинга alekseevtrener.ru: палитра, шрифты
+# (Manrope + Unbounded), pill-кнопки и зерно в хиро перенесены из index.html.
+# Сделана из meridian (стартер soloveev/blog-starter, MIT — см. LICENSE).
+theme = "dynamo"
+enableRobotsTXT = false            # свой robots.txt лежит в корне основного сайта
+
+[params]
+  author = "Андрей Алексеев"       # ← подпись автора в постах и schema.org
+  tagline = "Заметки о подготовке, восстановлении и реабилитации"
+  description = "Блог тренера по ОФП/СФП, массажиста и специалиста по реабилитации Андрея Алексеева."
+  heroImage = "img/hero.jpg"       # портрет для страницы «Кто я» (лежит в assets/img/)
+
+[menus]
+  [[menus.main]]
+    name = "Главная"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "Блог"
+    pageRef = "/statyi"
+    weight = 20
+  [[menus.main]]
+    name = "Кто я"
+    pageRef = "/kto-ya"
+    weight = 30
+  [[menus.main]]
+    name = "Контакты"
+    pageRef = "/kontakty"
+    weight = 40
+
+# Секция названа statyi, а не blog: baseURL уже /blog/, иначе архив был бы
+# /blog/blog/. Пермалинк по имени папки даёт статьям чистый /blog/имя-статьи/
+# (:slug подставил бы заголовок кириллицей в процентной кодировке).
+[permalinks]
+  statyi = "/:contentbasename/"
+
+[taxonomies]
+  tag = "tags"
+
+[related]
+  includeNewer = true
+  threshold = 10
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true    # разрешает сырой HTML в markdown (нужно для внешних ссылок с target="_blank")
+  [markup.highlight]
+    style = "github"
+
+[pagination]
+  pagerSize = 20
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]

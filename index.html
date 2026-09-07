@@ -10,15 +10,61 @@
 <meta property="og:description" content="ОФП/СФП, спортивный массаж и реабилитация в Санкт-Петербурге. Работаю с профессиональными спортсменами и любителями — от подготовки к турниру до возврата в спорт после травмы.">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://alekseevtrener.ru/">
+<meta property="og:site_name" content="Андрей Алексеев">
+<meta property="og:image" content="https://alekseevtrener.ru/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Андрей Алексеев — тренер по ОФП, массажист, реабилитолог">
+<meta name="twitter:description" content="ОФП/СФП, спортивный массаж и реабилитация в Санкт-Петербурге.">
+<meta name="twitter:image" content="https://alekseevtrener.ru/img/og-card.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Андрей Алексеев",
-  "jobTitle": ["Тренер по ОФП и СФП", "Массажист", "Специалист по реабилитации"],
-  "address": { "@type": "PostalAddress", "streetAddress": "пр. Динамо, 44", "addressLocality": "Санкт-Петербург", "addressCountry": "RU" },
-  "knowsAbout": ["ОФП", "СФП", "Спортивный массаж", "Реабилитация после травм", "Мануальная терапия", "Метод сухих игл", "Миофасциальный релиз", "Кинезиотейпирование", "Пляжный волейбол"],
-  "sameAs": ["https://t.me/andrei_ofp", "https://instagram.com/andrei_a_alekseev", "https://vk.ru/club241066382"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://alekseevtrener.ru/#person",
+      "name": "Андрей Алексеев",
+      "url": "https://alekseevtrener.ru/",
+      "image": "https://alekseevtrener.ru/img/portrait.jpg",
+      "jobTitle": ["Тренер по ОФП и СФП", "Массажист", "Специалист по реабилитации"],
+      "knowsAbout": ["ОФП", "СФП", "Спортивный массаж", "Реабилитация после травм", "Мануальная терапия", "Метод сухих игл", "Миофасциальный релиз", "Кинезиотейпирование", "Пляжный волейбол"],
+      "sameAs": ["https://t.me/andrei_ofp", "https://instagram.com/andrei_a_alekseev", "https://vk.ru/club241066382"]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://alekseevtrener.ru/#business",
+      "name": "Андрей Алексеев — ОФП, массаж, реабилитация",
+      "url": "https://alekseevtrener.ru/",
+      "image": "https://alekseevtrener.ru/img/og-card.jpg",
+      "description": "ОФП/СФП, спортивный массаж и реабилитация в Санкт-Петербурге. Подготовка к сезону, восстановление после травм, работа с хронической болью.",
+      "founder": { "@id": "https://alekseevtrener.ru/#person" },
+      "employee": { "@id": "https://alekseevtrener.ru/#person" },
+      "address": { "@type": "PostalAddress", "streetAddress": "пр. Динамо, 44", "addressLocality": "Санкт-Петербург", "addressCountry": "RU" },
+      "areaServed": { "@type": "City", "name": "Санкт-Петербург" },
+      "sameAs": ["https://t.me/andrei_ofp", "https://instagram.com/andrei_a_alekseev", "https://vk.ru/club241066382"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ОФП и СФП" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Спортивный массаж" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Реабилитация после травм" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Подготовка к турнирам" } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alekseevtrener.ru/#website",
+      "url": "https://alekseevtrener.ru/",
+      "name": "Андрей Алексеев",
+      "inLanguage": "ru-RU",
+      "publisher": { "@id": "https://alekseevtrener.ru/#person" }
+    }
+  ]
 }
 </script>
 </head>
@@ -390,6 +436,48 @@ section.block h2 {
   font-size: 0.98rem;
 }
 
+/* ---- Articles ---- */
+
+.articles {
+  display: grid;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.article-item {
+  background: var(--surface);
+  padding: 20px 22px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.15s ease;
+}
+
+.article-item:hover { background: var(--accent-soft); }
+.article-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.article-item .name {
+  font-family: 'Unbounded', 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.3;
+  color: var(--text);
+  display: block;
+}
+
+.article-item .excerpt {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  display: block;
+}
+
+.articles-more {
+  margin-top: 22px;
+}
+
 /* ---- Footer / contact ---- */
 
 footer.contact {
@@ -468,11 +556,11 @@ footer.contact p {
 <section class="block" id="who">
   <div class="wrap">
     <div class="split">
-      <img class="photo-slot photo" src="img/portrait.jpg" loading="lazy" alt="Андрей Алексеев — тренер по ОФП, массажист, специалист по реабилитации">
+      <img class="photo-slot photo" src="img/portrait.jpg" width="600" height="900" loading="lazy" alt="Андрей Алексеев — тренер по ОФП, массажист, специалист по реабилитации">
       <div>
         <div class="eyebrow">Кто я</div>
         <h2 style="margin-top:14px;">Андрей Алексеев</h2>
-        <p style="color:var(--text-muted); font-size:1.02rem; margin-top:18px;">Дипломированный тренер по ОФП и СФП, массажист, специалист по восстановлению и реабилитации. В профессии около 3 лет, постоянно учусь — семинары, курсы, разбор методик.</p>
+        <p style="color:var(--text-muted); font-size:1.02rem; margin-top:18px;">Дипломированный тренер по ОФП и СФП, массажист, специалист по восстановлению и реабилитации. В профессии с 2019 года, постоянно учусь — семинары, курсы, разбор методик.</p>
         <p style="color:var(--text-muted); font-size:1.02rem; margin-top:12px;">Сам 10 лет играю в пляжный волейбол, до этого — конькобежный спорт, академическая гребля, баскетбол, кроссфит, тайский бокс. Работаю с профессиональными спортсменами, любителями и людьми, далёкими от спорта, — включая детей.</p>
       </div>
     </div>
@@ -483,7 +571,7 @@ footer.contact p {
         <h2 style="margin-top:14px;">Здесь — всё в одних руках</h2>
         <p style="color:var(--text-muted); font-size:1.02rem; margin-top:18px;">Тренер по ОФП, массажист, реабилитолог — обычно три разных специалиста, которые друг друга не знают и тянут в разные стороны. Я вижу всю картину сразу: как вы двигаетесь, что болит и почему, и как одно связано с другим. Не отправляю по кругу — решаю то, что нашлось, сам.</p>
       </div>
-      <img class="photo-slot photo" src="img/work.jpg" loading="lazy" alt="Андрей Алексеев проводит массаж">
+      <img class="photo-slot photo" src="img/work.jpg" width="600" height="900" loading="lazy" alt="Андрей Алексеев проводит массаж">
     </div>
   </div>
 </section>
@@ -509,7 +597,7 @@ footer.contact p {
 <section class="block">
   <div class="wrap">
     <div class="split">
-      <img class="photo-slot wide photo" src="img/foot-sand-wide.jpg" loading="lazy" alt="Стопа на песке — специфика пляжного волейбола">
+      <img class="photo-slot wide photo" src="img/foot-sand-wide.jpg" width="1200" height="900" loading="lazy" alt="Стопа на песке — специфика пляжного волейбола">
       <div>
         <div class="eyebrow">Специализация</div>
         <h2 style="margin-top:14px; font-size:1.7rem;">Песок — не тот же паркет</h2>
@@ -561,6 +649,30 @@ footer.contact p {
   </div>
 </section>
 
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow">Разбираю подробно</div>
+    <h2 style="margin-bottom: 26px;">Статьи</h2>
+    <div class="articles">
+      <a class="article-item" href="/blog/fizika-peska/">
+        <span class="name">Физика песка: почему пляжный волейбол — это не тот же паркет</span>
+        <span class="excerpt">Другой толчок, другой первый шаг, другая нагрузка на стопу и ахилл. Что песок физически делает с телом — и почему советы с паркета сюда не переносятся.</span>
+      </a>
+      <a class="article-item" href="/blog/chto-takoe-ofp/">
+        <span class="name">Что такое ОФП и почему это не «качалка»</span>
+        <span class="excerpt">Не про размер мышц, а про то, может ли тело выдать нужное усилие в нужный момент игры.</span>
+      </a>
+      <a class="article-item" href="/blog/massazh-ili-uprazhneniya/">
+        <span class="name">Массаж или упражнения: что чем чинится</span>
+        <span class="excerpt">Разбираем на конкретных симптомах, что делать руками, что упражнением и в каком порядке.</span>
+      </a>
+    </div>
+    <div class="articles-more">
+      <a class="btn ghost" href="/blog/">Все статьи</a>
+    </div>
+  </div>
+</section>
+
 <footer class="contact" id="contact">
   <div class="wrap">
     <div class="eyebrow">Записаться</div>
@@ -571,6 +683,7 @@ footer.contact p {
       <a class="btn ghost" href="https://t.me/andrei_ofp" target="_blank" rel="noopener">Telegram-канал</a>
       <a class="btn ghost" href="https://instagram.com/andrei_a_alekseev" target="_blank" rel="noopener">Instagram</a>
       <a class="btn ghost" href="https://vk.ru/club241066382" target="_blank" rel="noopener">ВКонтакте</a>
+      <a class="btn ghost" href="/blog/">Статьи</a>
     </div>
     <div class="location">пр. Динамо, 44, Санкт-Петербург</div>
   </div>

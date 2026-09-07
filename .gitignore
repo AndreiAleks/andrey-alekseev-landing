@@ -1,0 +1,9 @@
+# Артефакты сборки Hugo — генерируются workflow'ом при деплое
+blog-src/public/
+blog-src/resources/
+blog-src/.hugo_build.lock
+
+# Локальная сборка «лендинг + блог» для предпросмотра
+_site/
+
+.DS_Store
