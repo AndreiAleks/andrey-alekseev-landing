@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
 
-# Блог временно закрыт от индексации — заглушечная тема и демо-контент,
-# снять запрет (и добавить /blog/sitemap.xml сюда) после наполнения реальным контентом.
-Disallow: /blog/
-
 Sitemap: https://alekseevtrener.ru/sitemap.xml
+Sitemap: https://alekseevtrener.ru/blog/sitemap.xml

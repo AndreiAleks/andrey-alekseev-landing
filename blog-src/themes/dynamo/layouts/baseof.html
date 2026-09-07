@@ -14,8 +14,6 @@
   <meta name="description" content="{{ $desc }}">
 
   <link rel="canonical" href="{{ .Permalink }}">
-  {{/* TODO: убрать после наполнения реальным контентом и кастомной темой — см. TODO в hugo.toml */}}
-  <meta name="robots" content="noindex, nofollow">
 
   {{- $ogimg := printf "%simg/og-card.jpg" site.BaseURL -}}
   {{- with .Resources.GetMatch "cover.*" }}{{ $ogimg = (.Fill "1200x630 Center").Permalink }}{{ end -}}
